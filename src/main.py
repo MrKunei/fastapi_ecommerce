@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi_users import fastapi_users
 
-from .auth.config import auth_backend
-from .auth.schemas import UserRead, UserCreate
+from auth.config import auth_backend
+from auth.schemas import UserRead, UserCreate
 
 app = FastAPI(title='Ecommerce API')
 
