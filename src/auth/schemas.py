@@ -20,8 +20,7 @@ class UserCreate(schemas.BaseUserCreate):
     username: str
     email: EmailStr
     phone: str = Field(regex="^[\+][7][0-9]{10}$")
-    password: str = Field(regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$%&!:])[A-Za-z\d@$%&!:]{8,}$")
-    repeat_password: str = Field(regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$%&!:])[A-Za-z\d@$%&!:]{8,}$")
+    password: str = Field(regex="^(?=.*[A-Z])(?=.*\d)(?=.*[$%&!:])[A-Za-z\d@$%&!:]{8,}$")
 
     is_active: Optional[bool] = True
     is_superuser: Optional[bool] = False
