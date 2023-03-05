@@ -17,7 +17,7 @@ class MySQLAlchemyDatabase(SQLAlchemyUserDatabase):
     async def get_by_email(self, phone_email: str) -> Optional[UP]:
         statement = select(self.user_table).where(
             (func.lower(self.user_table.email) == func.lower(phone_email)) |
-             (func.lower(self.user_table.phone) == func.lower(phone_email))
+            (func.lower(self.user_table.phone) == func.lower(phone_email))
         )
         result = await self._get_user(statement)
 

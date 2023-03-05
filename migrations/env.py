@@ -4,6 +4,7 @@ from sqlalchemy import pool
 from alembic import context
 
 from src.auth.models import Base as auth
+from src.product.models import Base as product
 from src.config import settings
 
 # this is the Alembic Config object, which provides
@@ -24,7 +25,7 @@ if config.config_file_name is not None:
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
-target_metadata = [auth.metadata]
+target_metadata = [auth.metadata, product.metadata]
 # target_metadata = None
 
 # other values from the config, defined by the needs of env.py,

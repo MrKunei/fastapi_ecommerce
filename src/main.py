@@ -2,6 +2,8 @@ from fastapi import FastAPI
 
 from auth.config import auth_backend, fastapi_users
 from auth.schemas import UserRead, UserCreate
+from product.router import router as router_product
+
 
 app = FastAPI(title='Ecommerce API')
 
@@ -17,3 +19,5 @@ app.include_router(
     prefix="/auth",
     tags=["Auth"],
 )
+
+app.include_router(router_product)
