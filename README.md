@@ -14,7 +14,7 @@
 alembic upgrade heads
 ```
 
-- для запуска сервера
+- для запуска сервера, перейти в папку src:
 ```
 uvicorn main:app --reload 
 ```
