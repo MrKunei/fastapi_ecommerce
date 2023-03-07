@@ -19,9 +19,12 @@ class UserRead(schemas.BaseUser[int]):
 class UserCreate(schemas.BaseUserCreate):
     username: str
     email: EmailStr
-    phone: str = Field(regex="^[\+][7][0-9]{10}$")
-    password: str = Field(regex="^(?=.*[A-Z])(?=.*\d)(?=.*[$%&!:])[A-Za-z\d@$%&!:]{8,}$")
+    phone: str = Field(regex="^[\+][7][0-9]{10}$", description='The number must begin with +7 and then 10 numbers.')
+    password: str = Field(regex="^(?=.*[A-Z])(?=.*\d)(?=.*[$%&!:])[A-Za-z\d@$%&!:]{8,}$",
+                          description='Password must be at least 8 characters, only Latin characters, at least 1 uppercase character, at least 1 special character $%&!:')
 
     is_active: Optional[bool] = True
     is_superuser: Optional[bool] = False
     is_verified: Optional[bool] = False
+
+

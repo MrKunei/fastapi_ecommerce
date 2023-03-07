@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from auth.config import auth_backend, fastapi_users
 from auth.schemas import UserRead, UserCreate
 from product.router import router as router_product
-
+from fastapi_pagination import add_pagination
 
 app = FastAPI(title='Ecommerce API')
 
@@ -21,3 +21,4 @@ app.include_router(
 )
 
 app.include_router(router_product)
+add_pagination(app)

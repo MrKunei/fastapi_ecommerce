@@ -17,4 +17,7 @@ class Settings:
 
     SECRET_AUTH = os.environ.get('SECRET_AUTH')
 
+    CART_SESSION_ID = os.environ.get('CART_SESSION_ID')
+
+
 settings = Settings()
